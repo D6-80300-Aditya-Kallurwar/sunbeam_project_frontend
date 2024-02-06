@@ -44,32 +44,32 @@ const Home = () => {
                 <div className="col-md-8">
     
                     {/* <!-- CARD COMPONENT --> */}
-                        <div className="row justify-content-center allign-item-center">
+                        <div className="row ">
     
-                            <div className="col-md-4">
+                            <div className="col-md-4 p-2 justify-content-center">
     
-                                <div className="card bg-secondary rounded-3" style={{width: "15rem",height: "20rem"}}>
-                                    <img src={home1} className="card-img-top h-75" alt="..."/>
+                                <div className="card bg-secondary rounded-3" >
+                                    <img src={home1} className="card-img-top h-75" style={{height: "300px!important"}} alt="..."/>
                                     <div className="card-body text-white text-center">
                                         <h5 className="card-title">Demons slayer</h5>
                                         
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-md-4 p-2 justify-content-center">
     
-                                <div className="card bg-secondary rounded-3" style={{width: "15rem",height: "20rem"}}>
-                                    <img src={home1} className="card-img-top h-75" alt="..."/>
+                                <div className="card bg-secondary rounded-3" >
+                                    <img src={home1} className="card-img-top h-75" style={{height: "300px!important"}} alt="..."/>
                                     <div className="card-body text-white text-center">
                                         <h5 className="card-title">Demons slayer</h5>
                                         
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-md-4 p-2 justify-content-center">
     
-                                <div className="card bg-secondary rounded-3" style={{width: "15rem",height: "20rem"}}>
-                                    <img src={home1} className="card-img-top h-75" alt="..."/>
+                                <div className="card bg-secondary rounded-3" >
+                                    <img src={home1} className="card-img-top h-75" style={{height: "300px!important"}} alt="..."/>
                                     <div className="card-body text-white text-center">
                                         <h5 className="card-title">Demons slayer</h5>
                                         
