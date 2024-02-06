@@ -1,13 +1,14 @@
 import React from "react";
 import logo from "../img/SignupImage.png";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from 'react';
 
 const Signup = () => {
     var rowStyle ={
         color: "rgb(255, 0, 0)",
         margin : "auto"
     };
-    const [user, setUser] = useState({Name: "", Age: "" , Address:"",mobileNo:"",emailid});
+    const [user, setUser] = useState({Name: "", Age: "" , Address:"",mobileNo:"",emailid:""});
     const [message, setMessage] = useState("");
     const [isDisabled, setisDisabled] = useState('disabled');
     const [searchText, setSearchText] = useState('');
