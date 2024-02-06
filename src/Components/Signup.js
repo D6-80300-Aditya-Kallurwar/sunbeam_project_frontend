@@ -7,6 +7,10 @@ const Signup = () => {
         color: "rgb(255, 0, 0)",
         margin : "auto"
     };
+    const [user, setUser] = useState({Name: "", Age: "" , Address:"",mobileNo:"",emailid});
+    const [message, setMessage] = useState("");
+    const [isDisabled, setisDisabled] = useState('disabled');
+    const [searchText, setSearchText] = useState('');
   return (
     <>
     <div class="container">
@@ -20,15 +24,15 @@ const Signup = () => {
                     <h1 style={{color: "rgb(189, 4, 4)"}}>SIGNUP HERE</h1>
                     <div class="form-group my-3">
                       <label for="exampleInputEmail1" class="fw-bold">Name</label>
-                      <input type="email" class="form-control border-danger text-danger" id="exampleInputEmail1"  placeholder="Enter Name" style={{background: "none;"}}/>
+                      <input type="text" class="form-control border-danger text-danger" name="name" value={user.Name}  placeholder="Enter Name" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
                       <label for="exampleInputPassword1" class="fw-bold">Email</label>
-                      <input type="password" class="form-control border-danger text-danger" id="exampleInputPassword1" placeholder="Enter Email" style={{background: "none;"}}/>
+                      <input type="email" class="form-control border-danger text-danger" id="exampleInputPassword1" placeholder="Enter Email" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
                       <label for="exampleInputPassword1" class="fw-bold">Phone Number</label>
-                      <input type="password" class="form-control border-danger text-danger" id="exampleInputPassword1" placeholder="Enter Phone Number" style={{background: "none;"}}/>
+                      <input type="text" class="form-control border-danger text-danger" id="exampleInputPassword1" placeholder="Enter Phone Number" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
                       <label for="exampleInputPassword1" class="fw-bold">Password</label>
