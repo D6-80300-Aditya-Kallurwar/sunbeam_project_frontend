@@ -4,6 +4,7 @@ import homeBack from "../img/background.png";
 import Carousel from "./Carousel";
 import Cards from "./Cards";
 import "./css/card.css"
+import Footer from "./Footer";
 
 const Home = () => {
     var rowStyle = {
@@ -46,10 +47,11 @@ const Home = () => {
                 </div>
             </div>
             <div className="container-fluid p-0 ">
-                <div className="col-md-12 " style={{ paddingTop:"7%", backgroundColor: "#6c131c" }}>
+                <div className="col-md-12 " style={{ paddingTop:"3%", backgroundColor: "#6c131c" }}>
                     <Cards />   
                 </div>
             </div>
+            
         </>)
 };
 

@@ -7,6 +7,7 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import About from './Components/About';
 import MovieDetail from './Components/MovieDetail';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path="/event" element={<Events />}></Route>
         <Route path="/Singleevent/:id" element={<Singleevents />}></Route> */}
       </Routes>
-      {/* <Footer></Footer> */}
+      <Footer/>
     </BrowserRouter>
   );
 }

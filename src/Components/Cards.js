@@ -14,7 +14,7 @@ import "./css/card.css"
 
 // Define a Card component to render individual cards
 const Card = ({ title, image , duration , rating ,releasedate , genre ,lang }) => (
-    <div  style={{margintop:"5%",marginBottom:"5%"}} className="col-12 col-md-6 col-lg-4 col-xl-3 p-2" >
+    <div  style={{margintop:"5%",marginBottom:"5%"}} className="col-6 col-md-4 col-lg-3 col-xl-2 p-2" >
         <div className="card p-2 " >
             <img src={image} className="card-img-top h-75" alt="Card" />
             <div className="text-center p-2" style={{backgroundColor:"black"}}>
@@ -41,11 +41,16 @@ const Cards = () => {
         { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
         { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
         { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
+        { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
+        { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
+        { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
+        { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
+
         // Add more card data as needed
     ];
 
     return (
-        <div className="container">
+        <div className="p-5">
             
             <div className="row justify-content-center align-items-center">
                 {/* Map over cardsData and render a Card component for each item */}
