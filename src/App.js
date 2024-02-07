@@ -5,6 +5,8 @@ import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
+import About from './Components/About';
+import MovieDetail from './Components/MovieDetail';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
+        <Route path="/About" element={<About />}></Route>
+        <Route path="/SingleMovie" element={<MovieDetail />}></Route>
         {/* <Route path="/About" element={<About />}></Route>
         <Route path="/classes" element={<Curriculum />}></Route>
         <Route path="/Curriculum" element={<Curriculum />}></Route>

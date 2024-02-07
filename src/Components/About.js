@@ -14,6 +14,7 @@ const About = () => {
             <div class="col-md-6 mt-5" style={{color: "#831422"}}>
                 <h1 style={{color: "#7b0f1c"}} class="mt-5"> // We Are Developers //  </h1>
                             <p class="mt-5" >
+
                                 The project objective is to book cinema tickets in online. The Ticket Reservation
                                 Systemis an Internet based application that can be accessed throughout the Net and can
                                 be accessed by anyone who has a net connection. This applicationwill reserve the
