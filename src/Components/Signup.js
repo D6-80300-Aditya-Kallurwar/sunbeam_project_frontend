@@ -16,7 +16,7 @@ const Signup = () => {
     <>
     <div class="container">
         
-        <div class="row" style={{height: "90vh"}}>
+        <div class="row" style={{height: "108vh"}}>
             <div class="col-md-6" style={rowStyle}>
                 <img src={logo} alt="" class="img-fluid"/>
             </div>

@@ -8,6 +8,7 @@ import Signup from './Components/Signup';
 import About from './Components/About';
 import MovieDetail from './Components/MovieDetail';
 import Footer from './Components/Footer';
+import SeatBooking from './Components/SeatBooking';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/About" element={<About />}></Route>
         <Route path="/SingleMovie" element={<MovieDetail />}></Route>
+        <Route path="/SeatBooking" element={<SeatBooking />}></Route>
         {/* <Route path="/About" element={<About />}></Route>
         <Route path="/classes" element={<Curriculum />}></Route>
         <Route path="/Curriculum" element={<Curriculum />}></Route>
