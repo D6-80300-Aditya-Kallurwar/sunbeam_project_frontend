@@ -46,48 +46,48 @@ const Signup = () => {
     }
   return (
     <>
-    <div class="container">
+    <div className="container">
         
-        <div class="row" style={{height: "90vh"}}>
-            <div class="col-md-6" style={rowStyle}>
-                <img src={logo} alt="" class="img-fluid"/>
+        <div className="row" style={{height: "90vh"}}>
+            <div className="col-md-6" style={rowStyle}>
+                <img src={logo} alt="" className="img-fluid"/>
             </div>
-            <div class="col-md-6" style={rowStyle}>
+            <div className="col-md-6" style={rowStyle}>
                 <form  >
                     <h1 style={{color: "rgb(189, 4, 4)"}}>SIGNUP HERE</h1>
-                    <div class="form-group my-3">
-                      <label for="exampleInputEmail1" class="fw-bold">Name</label>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputEmail1" className="fw-bold">Name</label>
 
-                      <input type="email" class="form-control border-danger text-danger" id="exampleInputEmail1" value={Name} onChange={e=>setName(e.target.value)} placeholder="Enter Name" style={{background: "none;"}}/>
+                      <input type="email" className="form-control border-danger text-danger" id="exampleInputEmail1" value={Name} onChange={e=>setName(e.target.value)} placeholder="Enter Name" style={{background: "none;"}}/>
 
                     </div>
-                    <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Age</label>
-                      <input type="password" class="form-control border-secondary text-secondary" id="exampleInputAge1" value={Age} onChange={e=>setAge(e.target.value)} placeholder="Enter Age" style={{background: "none;"}}/>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputPassword1" className="fw-bold">Age</label>
+                      <input type="password" className="form-control border-secondary text-secondary" id="exampleInputAge1" value={Age} onChange={e=>setAge(e.target.value)} placeholder="Enter Age" style={{background: "none;"}}/>
                     </div>
-                    <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Address</label>
-                      <input type="password" class="form-control border-secondary text-secondary" id="exampleInputAddress1" value={Address} onChange={e=>setAddress(e.target.value)} placeholder="Enter Address" style={{background: "none;"}}/>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputPassword1" className="fw-bold">Address</label>
+                      <input type="password" className="form-control border-secondary text-secondary" id="exampleInputAddress1" value={Address} onChange={e=>setAddress(e.target.value)} placeholder="Enter Address" style={{background: "none;"}}/>
                     </div>
-                    <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Email</label>
-                      <input type="email" class="form-control border-danger text-danger" id="exampleInputEmail1" value={Email} onChange={e=>setEmail(e.target.value)} placeholder="Enter Email" style={{background: "none;"}}/>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputPassword1" className="fw-bold">Email</label>
+                      <input type="email" className="form-control border-danger text-danger" id="exampleInputEmail1" value={Email} onChange={e=>setEmail(e.target.value)} placeholder="Enter Email" style={{background: "none;"}}/>
                     </div>
-                    <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Phone Number</label>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputPassword1" className="fw-bold">Phone Number</label>
 
-                      <input type="text" class="form-control border-danger text-danger" id="exampleInputMobile1" value={MobileNo} onChange={e=>setMobileNo(e.target.value)} placeholder="Enter Phone Number" style={{background: "none;"}}/>
+                      <input type="text" className="form-control border-danger text-danger" id="exampleInputMobile1" value={MobileNo} onChange={e=>setMobileNo(e.target.value)} placeholder="Enter Phone Number" style={{background: "none;"}}/>
                     </div>
-                    <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Password</label>
-                      <input type="password" class="form-control border-secondary text-secondary" id="exampleInputPassword1" value={Password} onChange={e=>setPassword(e.target.value)} placeholder="Enter Password" style={{background: "none;"}}/>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputPassword1" className="fw-bold">Password</label>
+                      <input type="password" className="form-control border-secondary text-secondary" id="exampleInputPassword1" value={Password} onChange={e=>setPassword(e.target.value)} placeholder="Enter Password" style={{background: "none;"}}/>
                     </div>
-                    <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Conform Password</label>
-                      <input type="password" class="form-control border-secondary text-secondary" id="exampleInputPassword1" placeholder="Conform Password" style={{background: "none;"}}/>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputPassword1" className="fw-bold">Conform Password</label>
+                      <input type="password" className="form-control border-secondary text-secondary" id="exampleInputPassword1" placeholder="Conform Password" style={{background: "none;"}}/>
                     </div>
-                    <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Gender</label>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputPassword1" className="fw-bold">Gender</label>
                       <select className="form-control border-secondary text-secondary" onClick={e=>setGender(e.target.value)}>
                          <option value="select">Select Gender</option>
                           <option value="MALE">Male</option>
@@ -95,7 +95,7 @@ const Signup = () => {
                           <option value="OTHER">Other</option>
                       </select>
                     </div>
-                    <button type="button" class="btn rounded-3 text-white" style={{backgroundColor:"#a30617"}} onClick={handleSubmit}>Sign up</button>
+                    <button type="submit" className="btn rounded-3 text-white" style={{backgroundColor:"#a30617"}} onClick={handleSubmit}>Sign up</button>
                   </form>
             </div>
         </div>

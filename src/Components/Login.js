@@ -56,7 +56,7 @@ const Login = () => {
                       <label for="exampleInputPassword1" class="fw-bold">Password</label>
                       <input type="password" class="form-control border-danger text-danger" id="exampleInputPassword1" value={Password} onChange={e=>setPassword(e.target.value)} placeholder="Enter Password" style={{background: "none;"}}/>
                     </div>
-                    <button type="button" class="btn btn-danger rounded-3 " onClick={handleSubmit}>Submit</button>
+                    <button type="submit" class="btn btn-danger rounded-3 " onClick={handleSubmit}>Submit</button>
                   </form>
             </div>
         </div>
