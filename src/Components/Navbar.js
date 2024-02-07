@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-    <nav className="navbar navbar-expand-lg navbar-light text-secondary shadow fixed" style={{backgroundColor:"transparent" }}>
+    <nav className="navbar navbar-expand-lg navbar-light text-secondary shadow fixed bg-transparent">
         <div className="container-fluid mx-auto ">
             <NavLink className="navbar-brand w-25 p-02" to={"/"}><img className="img-fluid w-50 h-25" src={logo}/></NavLink>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"

@@ -26,25 +26,25 @@ const Signup = () => {
                     <div class="form-group my-3">
                       <label for="exampleInputEmail1" class="fw-bold">Name</label>
 
-                      <input type="email" class="form-control border-danger text-danger" id="exampleInputEmail1"  placeholder="Enter Name" style={{background: "none;"}}/>
+                      <input type="email" class="form-control border-none text-danger" id="exampleInputEmail1"  placeholder="Enter Name" style={{background: "none;"}}/>
 
                     </div>
                     <div class="form-group my-3">
                       <label for="exampleInputPassword1" class="fw-bold">Email</label>
-                      <input type="email" class="form-control border-danger text-danger" id="exampleInputPassword1" placeholder="Enter Email" style={{background: "none;"}}/>
+                      <input type="email" class="form-control border-none text-danger" id="exampleInputPassword1" placeholder="Enter Email" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
                       <label for="exampleInputPassword1" class="fw-bold">Phone Number</label>
 
-                      <input type="text" class="form-control border-danger text-danger" id="exampleInputPassword1" placeholder="Enter Phone Number" style={{background: "none;"}}/>
+                      <input type="text" class="form-control border-none text-danger" id="exampleInputPassword1" placeholder="Enter Phone Number" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
                       <label for="exampleInputPassword1" class="fw-bold">Password</label>
-                      <input type="password" class="form-control border-secondary text-secondary" id="exampleInputPassword1" placeholder="Enter Password" style={{background: "none;"}}/>
+                      <input type="password" class="form-control border-none text-secondary" id="exampleInputPassword1" placeholder="Enter Password" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
                       <label for="exampleInputPassword1" class="fw-bold">Conform Password</label>
-                      <input type="password" class="form-control border-secondary text-secondary" id="exampleInputPassword1" placeholder="Conform Password" style={{background: "none;"}}/>
+                      <input type="password" class="form-control border-none text-secondary" id="exampleInputPassword1" placeholder="Conform Password" style={{background: "none;"}}/>
                     </div>
                     <button type="submit" class="btn rounded-3 text-white" style={{backgroundColor:"#a30617"}}>Sign up</button>
                   </form>
