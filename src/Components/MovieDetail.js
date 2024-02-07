@@ -37,7 +37,9 @@ const MovieDetail = () => {
                 <h4>Language : <>Hindi</></h4>
                 <h4>Genra : Action,Thriller</h4>
                 <h4>Release Date : 2024-02-06T11:06:33.326Z</h4>
-                <button className="btn btn-outline-warning p-3">Book Ticket</button>
+
+                <button className="btn text-white btn-success p-3">Book Ticket</button>
+
             </div>
         </div>
 

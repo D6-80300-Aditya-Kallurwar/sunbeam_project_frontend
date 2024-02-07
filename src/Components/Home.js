@@ -12,7 +12,7 @@ const Home = () => {
     };
     return (
         <>
-            <div className="container mt-3" >
+            <div className="container mt-3"  >
                 <Carousel />
                 <hr />
                 <div className="row allign-item-center justify-content-center" style={{ height: '65vh', backgroundImage: `url(${homeBack})` }}>
@@ -30,8 +30,8 @@ const Home = () => {
                 </div>
                 <hr />
                 <div className="row">
-                    <div className="col-md-3 bg-danger">
-                        <ul className="list-group p-3">
+                    {/* <div className="col-md-3 bg-danger">
+                        {/* <ul className="list-group p-3">
                             <li className="list-group-item list-group-item-danger p-4">A simple primary list group item</li>
                             <li className="list-group-item list-group-item-danger p-4">A simple secondary list group item</li>
                             <li className="list-group-item list-group-item-danger p-4">A simple success list group item</li>
@@ -41,10 +41,13 @@ const Home = () => {
                             <li className="list-group-item list-group-item-danger p-4">A simple light list group item</li>
                             <li className="list-group-item list-group-item-danger p-4">A simple dark list group item</li>
                         </ul>
-                    </div>
-                    <div className="col-md-9">
-                    <Cards/>
-                    </div>
+                    </div> */}
+
+                </div>
+            </div>
+            <div className="container-fluid p-0 ">
+                <div className="col-md-12 " style={{ paddingTop:"7%", backgroundColor: "#6c131c" }}>
+                    <Cards />   
                 </div>
             </div>
         </>)
