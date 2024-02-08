@@ -45,17 +45,17 @@ const Login = () => {
             <div class="col-md-6" style={rowStyle}>
                 <img src={logo} alt="" class="img-fluid"/>
             </div>
-            <div class="col-md-6" style={rowStyle}>
+            <div class="col-md-6 lead" style={rowStyle}>
                 <form  >
-                    <h1 style={{color: "rgb(189, 4, 4)"}}>LOGIN HERE</h1>
+                    <h1 style={{color: "rgb(189, 4, 4)"}} className="display-5">LOGIN HERE</h1>
                     <div class="form-group my-3">
-                      <label for="exampleInputEmail1" class="fw-bold">Email address</label>
+                      <label for="exampleInputEmail1" >Email address</label>
 
-                      <input type="email" class="form-control border-danger text-danger" id="exampleInputEmail1" value={Email} onChange={e=>setEmail(e.target.value)}  placeholder="Enter Email" style={{background: "none;"}}/>
+                      <input type="email" class="form-control border-none " id="exampleInputEmail1" value={Email} onChange={e=>setEmail(e.target.value)}  placeholder="Enter Email" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Password</label>
-                      <input type="password" class="form-control border-danger text-danger" id="exampleInputPassword1" value={Password} onChange={e=>setPassword(e.target.value)} placeholder="Enter Password" style={{background: "none;"}}/>
+                      <label for="exampleInputPassword1" >Password</label>
+                      <input type="password" class="form-control border-none " id="exampleInputPassword1" value={Password} onChange={e=>setPassword(e.target.value)} placeholder="Enter Password" style={{background: "none;"}}/>
 
                     </div>
                     <button type="submit" class="btn btn-danger rounded-3 " onClick={handleSubmit}>Submit</button>
