@@ -48,9 +48,11 @@ const Signup = () => {
     <>
     <div className="container">
         
-        <div className="row" style={{height: "90vh"}}>
-            <div className="col-md-6" style={rowStyle}>
-                <img src={logo} alt="" className="img-fluid"/>
+
+        <div class="row" style={{height: "108vh"}}>
+            <div class="col-md-6" style={rowStyle}>
+                <img src={logo} alt="" class="img-fluid"/>
+
             </div>
             <div className="col-md-6" style={rowStyle}>
                 <form  >
@@ -58,12 +60,14 @@ const Signup = () => {
                     <div className="form-group my-3">
                       <label htmlFor="exampleInputEmail1" className="fw-bold">Name</label>
 
+
                       <input type="email" className="form-control border-danger text-danger" id="exampleInputEmail1" value={Name} onChange={e=>setName(e.target.value)} placeholder="Enter Name" style={{background: "none;"}}/>
 
                     </div>
                     <div className="form-group my-3">
                       <label htmlFor="exampleInputPassword1" className="fw-bold">Age</label>
                       <input type="password" className="form-control border-secondary text-secondary" id="exampleInputAge1" value={Age} onChange={e=>setAge(e.target.value)} placeholder="Enter Age" style={{background: "none;"}}/>
+
                     </div>
                     <div className="form-group my-3">
                       <label htmlFor="exampleInputPassword1" className="fw-bold">Address</label>
@@ -75,6 +79,7 @@ const Signup = () => {
                     </div>
                     <div className="form-group my-3">
                       <label htmlFor="exampleInputPassword1" className="fw-bold">Phone Number</label>
+
 
                       <input type="text" className="form-control border-danger text-danger" id="exampleInputMobile1" value={MobileNo} onChange={e=>setMobileNo(e.target.value)} placeholder="Enter Phone Number" style={{background: "none;"}}/>
                     </div>
@@ -94,6 +99,7 @@ const Signup = () => {
                           <option value="FEMALE">Female</option>
                           <option value="OTHER">Other</option>
                       </select>
+
                     </div>
                     <button type="submit" className="btn rounded-3 text-white" style={{backgroundColor:"#a30617"}} onClick={handleSubmit}>Sign up</button>
                   </form>
