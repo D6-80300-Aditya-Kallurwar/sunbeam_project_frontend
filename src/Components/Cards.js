@@ -2,6 +2,7 @@ import React from "react";
 import home1 from "../img/movie.jpg";
 import star from "./css/star.png"
 import "./css/card.css"
+import axios from "axios";
 /**
 "movieName": "string",
 "duration": 0,
@@ -30,8 +31,17 @@ const Card = ({ title, image , duration , rating ,releasedate , genre ,lang }) =
     </div>
 );
 
+
 const Cards = () => {
     // Array of card data
+
+    const movies=[];
+
+    axios.get("http://127.0.0.1:8080/movie/getAllMovies").then((result)=>{
+        if(result!=null)
+            movies=result;
+    })
+
     const cardsData = [
         { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
         { title: "Demon Slayer", image: home1 , duration: 240 , rating:"8.9" ,releasedate:"2024-02-06T11:06:33.326Z" , genre:"DRAMA" ,lang :"HINDI"},
