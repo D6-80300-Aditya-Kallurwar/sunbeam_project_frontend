@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../img/SignupImage.png";
 import { NavLink } from "react-router-dom";
+import SeatBooking from "./SeatBooking";
 
 const MovieDetail = () => {
     var rowStyle ={
@@ -18,8 +19,26 @@ const MovieDetail = () => {
    
  return (
     <>
-    <div class="container my-5">
-        <div class="row justify-content-center align-items-center" style={{height: "90vh"}}>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Theater Seats</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <SeatBooking/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="container my-5 py-5 justify-content-center align-items-center">
+        <div class="row ">
             <div class="col-md-6 mb-3" style={rowStyle}>
             <div className="rounded m-auto" style={imageContainer}>
 
@@ -41,7 +60,7 @@ const MovieDetail = () => {
                 <div>Release Date : 2024-02-06T11:06:33.326Z</div>
                </div>
 
-                <button className="btn text-white btn-success p-3">Book Ticket</button>
+                <button className="btn text-white btn-success p-3 " data-bs-toggle="modal" data-bs-target="#exampleModal">Book Ticket</button>
 
             </div>
         </div>
