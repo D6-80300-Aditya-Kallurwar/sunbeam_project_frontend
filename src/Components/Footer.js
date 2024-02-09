@@ -1,6 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+
+
+
 const Footer = () => {
     return (
         // < !--Remove the container if you want to extend the Footer to full width. -- >

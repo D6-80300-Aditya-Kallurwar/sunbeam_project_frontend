@@ -8,6 +8,7 @@ import Signup from './Components/Signup';
 import About from './Components/About';
 import MovieDetail from './Components/MovieDetail';
 import Footer from './Components/Footer';
+import Admin_login from './Components/Admin_login';
 import SeatBooking from './Components/SeatBooking';
 import Admin from './Components/Admin';
 
@@ -21,7 +22,10 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/About" element={<About />}></Route>
         <Route path="/SingleMovie" element={<MovieDetail />}></Route>
+<<<<<<< HEAD
         <Route path="/Admin" element={<Admin />}></Route>
+=======
+>>>>>>> edb1e6e7d5a34b8c68ff09af27b5df0234bb5aa2
         {/* <Route path="/About" element={<About />}></Route>
         <Route path="/classes" element={<Curriculum />}></Route>
         <Route path="/Curriculum" element={<Curriculum />}></Route>
