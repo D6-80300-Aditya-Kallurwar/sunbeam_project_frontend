@@ -25,7 +25,7 @@ const Card = ({ movieName, duration, rating, genre, language }) => (
             <div className="text-center p-2" style={{ backgroundColor: "black" }}>
                 <img src={star} height={"25px"} />
                 <span className="text-white text-center ps-2" >
-                    {rating}/20
+                    {rating}/10
                 </span>
             </div>
             <div id="crd-text" className="card-body text-white text-center">
@@ -35,6 +35,7 @@ const Card = ({ movieName, duration, rating, genre, language }) => (
     </div>
     
 );
+
 
 const Cards = () => {
     const [movies, setMovies] = useState([]);
