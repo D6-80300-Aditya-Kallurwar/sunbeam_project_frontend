@@ -5,15 +5,15 @@ import { NavLink } from "react-router-dom";
 const About = () => {
   return (
     <>
-    <div class="container">
+    <div className="container">
         
-    <div class="row" style={{height: "90vh"}}>
-            <div class="col-md-6">
-                <img src={logo} alt="" class="img-fluid"/>
+    <div className="row" style={{height: "90vh"}}>
+            <div className="col-md-6">
+                <img src={logo} alt="" className="img-fluid"/>
             </div>
-            <div class="col-md-6 mt-5" style={{color: "#831422"}}>
-                <h1 style={{color: "#7b0f1c"}} class="mt-5"> // We Are Developers //  </h1>
-                            <p class="mt-5" >
+            <div className="col-md-6 mt-5 text-center" style={{color: "#831422"}}>
+                <h1 style={{color: "#7b0f1c"}} className="mt-5 display-4"> // We Are Developers //  </h1>
+                            <p className="mt-5 lead" >
 
                                 The project objective is to book cinema tickets in online. The Ticket Reservation
                                 Systemis an Internet based application that can be accessed throughout the Net and can

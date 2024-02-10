@@ -19,9 +19,9 @@ const Signup = () => {
     const [isDisabled, setisDisabled] = useState('disabled');
     const [searchText, setSearchText] = useState('');
 
-    var user={name:"",age:"",address:"",emailId:"",mobileNo:"",password:"",gender:""};
+    var user={name:"",age:"",address:"",mobileNo:"",emailId:"",password:"",gender:""};
     const reset=()=>{
-        user={name:"",age:"",address:"",emailId:"",mobileNo:"",password:"",gender:""};
+      user={name:"",age:"",address:"",mobileNo:"",emailId:"",password:"",gender:""};
     }
 
     const ShowMessage=(msg)=>{
@@ -32,15 +32,11 @@ const Signup = () => {
  }
 
     const handleSubmit=()=>{
-          user={name:Name,age:Age,address:Address,emailId:Email,mobileNo:MobileNo,password:Password,gender:Gender};
+          user={name:Name,age:Age,address:Address,mobileNo:MobileNo,emailId:Email,password:Password,gender:Gender};
           console.log(user);
-          axios.post("http://127.0.0.1:8080/user/addNew",user).then((result)=>{
-            if(result.data.affectedRows!==undefined&&result.data.affectedRows>0){
-              ShowMessage("User registered successfully!!!");
+          axios.post("http://127.0.0.1:8081/user/addNew",user).then((result)=>{
+              console.log(result);
               reset();
-            }else{
-              ShowMessage("Something went wrong!!!");
-            }
           })
     }
   return (
@@ -60,17 +56,17 @@ const Signup = () => {
                       <label htmlFor="exampleInputEmail1" >Name</label>
 
 
-                      <input type="email" className="form-control border-none" id="exampleInputEmail1" value={Name} onChange={e=>setName(e.target.value)} placeholder="Enter Name" style={{background: "none;"}}/>
+                      <input type="text" className="form-control border-none" id="exampleInputEmail1" value={Name} onChange={e=>setName(e.target.value)} placeholder="Enter Name" style={{background: "none;"}}/>
 
                     </div>
                     <div className="form-group my-3">
                       <label htmlFor="exampleInputPassword1" >Age</label>
-                      <input type="password" className="form-control border-none" id="exampleInputAge1" value={Age} onChange={e=>setAge(e.target.value)} placeholder="Enter Age" style={{background: "none;"}}/>
+                      <input type="number" className="form-control border-none" id="exampleInputAge1" value={Age} onChange={e=>setAge(e.target.value)} placeholder="Enter Age" style={{background: "none;"}}/>
 
                     </div>
                     <div className="form-group my-3">
                       <label htmlFor="exampleInputPassword1" >Address</label>
-                      <input type="password" className="form-control border-none" id="exampleInputAddress1" value={Address} onChange={e=>setAddress(e.target.value)} placeholder="Enter Address" style={{background: "none;"}}/>
+                      <input type="text" className="form-control border-none" id="exampleInputAddress1" value={Address} onChange={e=>setAddress(e.target.value)} placeholder="Enter Address" style={{background: "none;"}}/>
                     </div>
                     <div className="form-group my-3">
                       <label htmlFor="exampleInputPassword1" >Email</label>
