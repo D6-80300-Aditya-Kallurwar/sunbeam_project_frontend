@@ -4,6 +4,31 @@ import Logo from '../../../img/logo.png'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+// [
+//     {
+//       "movieName": "The Batman",
+//       "duration": 176,
+//       "rating": 7.8,
+//       "genre": "ACTION",
+//       "language": "ENGLISH"
+//     },
+//     {
+//       "movieName": "WAR",
+//       "duration": 135,
+//       "rating": 8.9,
+//       "genre": "ACTION",
+//       "language": "HINDI"
+//     },
+//     {
+//       "movieName": "IRONMAN",
+//       "duration": 142,
+//       "rating": 9,
+//       "genre": "ACTION",
+//       "language": "ENGLISH"
+//     }
+//   ]
+
+
 function Dashboard() {
     const [Movies, setMovies] = useState([]);
     const [movie, setMovie] = useState({ movieName: "", duration: "", rating: "", releaseDate: "", genre: "", language: "" });
@@ -11,7 +36,7 @@ function Dashboard() {
     const [isDisabled, setisDisabled] = useState('disabled');
     const [searchText, setSearchText] = useState('');
 
-    // const url = "http://127.0.0.1:8080/urihere"
+    const url = "http://127.0.0.1:8080/movie/MovieList"
 
     useEffect(() => {
         GetRecords();
@@ -44,6 +69,8 @@ function Dashboard() {
         });
     }
 
+    
+
     const OnTextChanged = (args) => {
         var copyOfMovie = { ...movie };
         copyOfMovie[args.target.name] = args.target.value;
@@ -69,6 +96,7 @@ function Dashboard() {
         });
     }
 
+    
     const EditRecord = (movieToEdit) => {
         setMovie({ ...movieToEdit });
         setisDisabled(null);

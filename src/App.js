@@ -8,12 +8,9 @@ import Signup from './Components/Signup';
 import About from './Components/About';
 import MovieDetail from './Components/MovieDetail';
 import Footer from './Components/Footer';
-<<<<<<< Updated upstream
-=======
 import Admin_login from './Components/Admin/Admin_login';
-import SeatBooking from './Components/SeatBooking';
+// import SeatBooking from './Components/SeatBooking';
 import MovieCrud from './Components/Admin/Admin_MovieCrud/Admin_movie_crud';
->>>>>>> Stashed changes
 
 function App() {
   return (
@@ -26,11 +23,9 @@ function App() {
         <Route path="/About" element={<About />}></Route>
         <Route path="/SingleMovie" element={<MovieDetail />}></Route>
         <Route path="/Adminlogin" element={<Admin_login />}></Route>
-        <Route path="/Seatbooking" element={<SeatBooking />}></Route>
+        {/* <Route path="/Seatbooking" element={<SeatBooking />}></Route> */}
         <Route path="/Moviecrud" element={<MovieCrud />}></Route>
-        
-        <Route path="/Seatbooking" element={<SeatBooking />}></Route>
-        <Route path="/Seatbooking" element={<SeatBooking />}></Route>
+        {/* <Route path="/Seatbooking" element={<SeatBooking />}></Route> */}
         
         {/* <Route path="/About" element={<About />}></Route>
         <Route path="/classes" element={<Curriculum />}></Route>
