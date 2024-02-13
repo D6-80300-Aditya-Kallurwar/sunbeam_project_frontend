@@ -4,6 +4,7 @@ import star from "./css/star.png"
 import "./css/card.css"
 import axios from "axios";
 import image from "../img/movie.jpg"
+import { NavLink } from "react-router-dom";
 /**
 "movieName": "string",
 "duration": 0,
@@ -12,17 +13,27 @@ import image from "../img/movie.jpg"
 "genre": "DRAMA",
 "language": "HINDI"
 */
-
-
 // Define a Card component to render individual cards
 
+const Card = ({ movieName, duration, rating, genre, language,id }) => {
+    const [image, setImage] = useState("");
+    axios.get("http://127.0.0.1:8081/movie/images/" +id).then((result) => {
+        setImage(result.data);
+      }).catch((error) => {
+        console.log(error)
+      });
+    
+    return (
 
-const Card = ({ movieName, duration, rating, genre, language }) => (
-
-    <div style={{ margintop: "5%", marginBottom: "5%" }} className="col-6 col-md-4 col-lg-3 col-xl-2 p-2" >
-        <div className="card p-2 " >
-            <img src={image} className="card-img-top h-75" alt="Card" />
-            <div className="text-center p-2" style={{ backgroundColor: "black" }}>
+        <NavLink to={"/SingleMovie"}  state={{ id: {id} }} className="col-6 col-md-4 col-lg-3 col-xl-2 p-2">
+    <div style={{ margintop: "5%", marginBottom: "5%" }}  >
+        <div className="card p-2 text-center align-items-center" >
+            <img className="card-img-top h-75"
+            src={`data:image/jpeg;base64,${image}`}
+                alt="https://www.shutterstock.com/shutterstock/photos/1811092264/display_1500/stock-vector-no-image-available-like-missing-picture-linear-flat-simple-style-modern-logotype-graphic-art-1811092264.jpg" class="img-fluid "
+                style={{width:"150px",height:"200px"}}
+              />
+            <div className="text-center p-2" style={{ backgroundColor: "black" ,width:"100%"}}>
                 <img src={star} height={"25px"} />
                 <span className="text-white text-center ps-2" >
                     {rating}/10
@@ -33,8 +44,10 @@ const Card = ({ movieName, duration, rating, genre, language }) => (
             </div>
         </div>
     </div>
+    </NavLink>
     
-);
+    );
+    };
 
 
 const Cards = () => {
@@ -52,13 +65,11 @@ const Cards = () => {
             <div className="row justify-content-center align-items-center">
                 {
                     movies.map((card) => {
-                    return <Card movieName={card.movieName} duration={card.duration} rating={card.rating} genre={card.genre} language={card.language} />
+                    return <Card movieName={card.movieName} duration={card.duration} rating={card.rating} genre={card.genre} language={card.language} id={card.id}/>
                 })}
             </div>
         </div>
     );
 };
-
-
 
 export default Cards;

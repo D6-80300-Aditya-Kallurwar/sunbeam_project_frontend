@@ -10,12 +10,12 @@ const Login = () => {
         color: "rgb(255, 0, 0)",
         margin : "auto"
     };
-    var loginInfo={emailId:"",password:""};
+    var loginInfo={userEmail:"",password:""};
     const [Email,setEmail]=useState("");
     const [Password,setPassword]=useState("");
     const [message, setMessage] = useState("");
     const reset=()=>{
-      loginInfo={emailId:"",password:""};
+      loginInfo={userEmail:"",password:""};
     }
 
     const ShowMessage=(msg)=>{
@@ -26,15 +26,10 @@ const Login = () => {
  }
  
     const handleSubmit=()=>{
-      loginInfo={emailId:Email,password:Password};
+      loginInfo={userEmail:Email,password:Password};
       console.log(loginInfo);
-      axios.post("http://127.0.0.1:8080/user/addNew",loginInfo).then((result)=>{
-        if(result.data.affectedRows!==undefined&&result.data.affectedRows>0){
-          ShowMessage("Login successfully!!!");
-          reset();
-        }else{
-          ShowMessage("Something went wrong!!!");
-        }
+      axios.post("http://127.0.0.1:8080/user/validate",loginInfo).then((result)=>{
+        console.log(result);
       })
     }
   return (
