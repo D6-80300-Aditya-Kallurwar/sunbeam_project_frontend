@@ -3,30 +3,6 @@ import { toast } from 'react-toastify'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import AddMovie from './upperAddMovie';
-// [
-//     {
-//       "movieName": "The Batman",
-//       "duration": 176,
-//       "rating": 7.8,
-//       "genre": "ACTION",
-//       "language": "ENGLISH"
-//     },
-//     {
-//       "movieName": "WAR",
-//       "duration": 135,
-//       "rating": 8.9,
-//       "genre": "ACTION",
-//       "language": "HINDI"
-//     },
-//     {
-//       "movieName": "IRONMAN",
-//       "duration": 142,
-//       "rating": 9,
-//       "genre": "ACTION",
-//       "language": "ENGLISH"
-//     }
-//   ]
-
 
 function Dashboard() {
     const [Movies, setMovies] = useState([]);
@@ -93,11 +69,14 @@ function Dashboard() {
     }
 
     return (<div className='container'>
+        <hr />
+        <h1>Welcome Admin</h1>
         <center>
             <hr></hr>
             {/* <div className='alert alert-info'>{message}</div> */}
             <div className='container'>
                 <h3>Add Movie</h3>
+                <br />
                 <AddMovie movie={movie}
                     OnTextChanged={OnTextChanged}
                     AddRecord={AddRecord}
