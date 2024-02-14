@@ -24,18 +24,7 @@ function App() {
         <Route path="/SingleMovie" element={<MovieDetail />}></Route>
         <Route path="/Admin" element={<Admin />}></Route>
         <Route path="/AdminLogin" element={<Admin_login />}></Route>
-        {/* <Route path="/Seatbooking" element={<SeatBooking />}></Route> */}
         <Route path="/Moviecrud" element={<MovieCrud />}></Route>
-        {/* <Route path="/Seatbooking" element={<SeatBooking />}></Route> */}
-        
-        {/* <Route path="/About" element={<About />}></Route>
-        <Route path="/classes" element={<Curriculum />}></Route>
-        <Route path="/Curriculum" element={<Curriculum />}></Route>
-        <Route path="/Career" element={<Career />}></Route>
-        <Route path="/Contact" element={<Contact />}></Route>
-        <Route path="/Career/Contact" element={<Contact />}></Route>
-        <Route path="/event" element={<Events />}></Route>
-        <Route path="/Singleevent/:id" element={<Singleevents />}></Route> */}
       </Routes>
       <Footer/>
     </BrowserRouter>
