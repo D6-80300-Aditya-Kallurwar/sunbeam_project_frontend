@@ -11,7 +11,8 @@ import Footer from './Components/Footer';
 import Admin_login from './Components/Admin/Admin_login';
 // import SeatBooking from './Components/SeatBooking';
 import MovieCrud from './Components/Admin/Admin_MovieCrud/Admin_movie_crud';
-
+import Admin from './Components/Admin';
+import TheaterCrud  from './Components/Admin/Admin_TheaterCrud/Admin_theater_crud'
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Admin" element={<Admin />}></Route>
         <Route path="/AdminLogin" element={<Admin_login />}></Route>
         <Route path="/Moviecrud" element={<MovieCrud />}></Route>
+        <Route path="/TheaterCrud" element={<TheaterCrud />}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>
