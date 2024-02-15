@@ -16,17 +16,17 @@ const Admin_login = () => {
             </div>
             <div class="col-md-6" style={rowStyle}>
                 <form  >
-                    <h1 className=" text-center" style={{color: "#831422"}}>Welcome Admin</h1>
+                    <h1 className=" text-center display-3" style={{color: "#831422"}}>Welcome Admin</h1>
                     <br></br>
                     <br></br>
-                    <h3 style={{color: "#831422"}}>LOGIN HERE</h3>
+                    <h3 style={{color: "#831422"}} className="display-6">LOGIN HERE</h3>
                     <div class="form-group my-3">
-                      <label for="exampleInputEmail1" class="fw-bold">Email address</label>
-                      <input type="email" class="form-control border-none text-danger" id="exampleInputEmail1"  placeholder="Enter Email" style={{background: "none;"}}/>
+                      <label for="exampleInputEmail1" class="lead text-danger">Email address</label>
+                      <input type="email" class="form-control text-danger" id="exampleInputEmail1"  placeholder="Enter Email" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Password</label>
-                      <input type="password" class="form-control border-none text-danger" id="exampleInputPassword1" placeholder="Enter Password" style={{background: "none;"}}/>
+                      <label for="exampleInputPassword1" class="lead text-danger">Password</label>
+                      <input type="password" class="form-control text-danger" id="exampleInputPassword1" placeholder="Enter Password" style={{background: "none;"}}/>
                     </div>
                     <button type="submit" class="btn rounded-3 text-white" style={{backgroundColor:"#a30617"}}>Submit</button>
                   </form>

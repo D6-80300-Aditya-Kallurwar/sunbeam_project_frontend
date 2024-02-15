@@ -1,4 +1,3 @@
-import '../common/common.css';
 import { toast } from 'react-toastify'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -12,8 +11,8 @@ function Dashboard() {
     const [searchText, setSearchText] = useState('');
 
 
-    const url = "http://127.0.0.1:8080/movie"
-    const urlimage = "http://127.0.0.1:8080/movie/MovieList"
+    const url = "http://127.0.0.1:8081/movie"
+    const urlimage = "http://127.0.0.1:8081/movie/MovieList"
 
     useEffect(() => {
         GetRecords();
@@ -88,9 +87,9 @@ function Dashboard() {
             <div className='text-start row'>
             <div className='col-2 text-center'>
                 </div>
-                <div class="input-group w-75 col">
-                    <span class="input-group-text" id="basic-addon1"> @ Search </span>
-                    <input type="text" class="form-control" placeholder="Movie Name" aria-describedby="basic-addon1" value={searchText}
+                <div className="input-group w-75 col">
+                    <span className="input-group-text" id="basic-addon1"> @ Search </span>
+                    <input type="text" className="form-control" placeholder="Movie Name" aria-describedby="basic-addon1" value={searchText}
                         onChange={OnSearch} />
                 </div>
                 <div className='col-2 text-center'>
