@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../img/image.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./css/nav.css";
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteUser } from "../features/userSlice";
+import { toast } from "react-toastify";
+
 const Navbar = () => {
+    const [token,setToken]=useState("");
+    const navigate = useNavigate();
+    
+  // use it for updating the cart slice
+  const selector = useSelector(state=>state.user);
+  const dispatch = useDispatch();
+  useEffect(()=>{
+      console.log("navbar");
+      console.log(selector);
+      setToken(selector);
+      
+    },[])
+    useEffect(()=>{
+      setToken(selector.items);
+  },[selector])
+    const logout=()=>{
+            dispatch(deleteUser());
+            navigate('/');
+            toast.success("Come back soon");
+    }
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-light text-secondary sticky-top  shadow fixed" style={{backgroundColor:"rgba(255, 255, 255, 0.9)" }}>
@@ -18,12 +42,22 @@ const Navbar = () => {
                     <li className="nav-item me-4">
                         <NavLink className="nav-link" style={{color:"#6c131c"}} to={"/"}>Home</NavLink>
                     </li>
+                    { token ==="" && (
+                        <>
+
                     <li className="nav-item me-4">
                         <NavLink className="nav-link" style={{color:"#6c131c"}} to={"/login"}>Login</NavLink>
                     </li>
                     <li className="nav-item me-4">
                         <NavLink className="nav-link"style={{color:"#6c131c"}} to={"/signup"}>Sign up</NavLink>
                     </li>
+                        </>
+                    )}
+                    {token !== "" && (
+                        <li className="nav-item me-4">
+                        <button className="nav-link"style={{color:"#6c131c"}} onClick={logout}>Logout</button>
+                    </li>
+                    )}
                     <li className="nav-item me-4">
                         <NavLink className="nav-link" style={{color:"#6c131c"}}to={"/about"}>About us</NavLink>
                     </li>

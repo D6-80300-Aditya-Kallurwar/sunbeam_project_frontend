@@ -4,9 +4,13 @@ import { NavLink } from "react-router-dom";
 import SeatBooking from "./SeatBooking";
 import axios from "axios";
 import { useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "../features/userSlice";
 
 
 const MovieDetail = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
   var rowStyle = {
     color: "rgb(179, 16, 4)",
     margin: "auto"
@@ -21,15 +25,30 @@ const MovieDetail = () => {
   }
   const [movie, setMovie] = useState({});
   const [image, setImage] = useState("");
+  const option ={
+    headers : {
+     'Authorization': `Bearer ${user.items.token}`
+   }
+
+  }
+  // console.log(user.items);
+  
   // Array of card data
   let location = useLocation();
   console.log(location.state.id.id);
   useEffect(() => {
+    console.log(user.items.token);
+    axios.get("http://127.0.0.1:8081/user/email",option).then((result) => {
+      console.log(result);
+      sessionStorage.setItem("userData",result.data);
+      }).catch((error) => {
+        console.log(error)
+      });
     axios.get("http://127.0.0.1:8081/movie/" + location.state.id.id).then((result) => {
-      console.log(result.data);
+      // console.log(result.data);
       setMovie(result.data);
       axios.get("http://127.0.0.1:8081/movie/images/" + location.state.id.id).then((result) => {
-        console.log(result.data);
+        // console.log(result.data);
         setImage(result.data);
         // const imagebytes =  result.arraybuffer();
 

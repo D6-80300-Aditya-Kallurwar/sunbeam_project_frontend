@@ -10,6 +10,8 @@ import MovieDetail from './Components/MovieDetail';
 import Footer from './Components/Footer';
 import Admin_login from './Components/Admin_login';
 import Admin from './Components/Admin';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
         <Route path="/event" element={<Events />}></Route>
         <Route path="/Singleevent/:id" element={<Singleevents />}></Route> */}
       </Routes>
+      <ToastContainer />
       <Footer/>
     </BrowserRouter>
   );

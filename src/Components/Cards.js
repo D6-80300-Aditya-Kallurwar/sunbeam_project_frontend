@@ -17,6 +17,7 @@ import { NavLink } from "react-router-dom";
 
 const Card = ({ movieName, duration, rating, genre, language,id }) => {
     const [image, setImage] = useState("");
+    console.log(id);
     axios.get("http://127.0.0.1:8081/movie/images/" +id).then((result) => {
         setImage(result.data);
       }).catch((error) => {
@@ -56,12 +57,12 @@ const Cards = () => {
         useEffect(()=>{
             axios.get("http://127.0.0.1:8081/movie/MovieList").then((result) => {
                     setMovies(result.data);
-                    console.log(movies);
                 });
-     },[])
-
-    return (
-        <div className="p-5">
+                console.log(movies);
+            },[])
+            
+            return (
+                <div className="p-5">
             <div className="row justify-content-center align-items-center">
                 {
                     movies.map((card) => {

@@ -1,13 +1,16 @@
 import React from "react";
 import logo from "../img/SignupImage.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify'
+
 import axios from "axios";
 const Signup = () => {
     var rowStyle ={
         color: "#a30617",
         margin : "auto"
     };
+    const navigate = useNavigate();
     const [Name,setName]=useState("");
     const [Email,setEmail]=useState("");
     const [Age,setAge]=useState("");
@@ -15,13 +18,14 @@ const Signup = () => {
     const [MobileNo,setMobileNo]=useState("");
     const [Password,setPassword]=useState("");
     const [Gender,setGender]=useState("");
+    const [Role,setRole]=useState("");
     const [message, setMessage] = useState("");
     const [isDisabled, setisDisabled] = useState('disabled');
     const [searchText, setSearchText] = useState('');
 
-    var user={name:"",age:"",address:"",mobileNo:"",emailId:"",password:"",gender:""};
+    var user={name:"",age:"",address:"",mobileNo:"",emailId:"",password:"",gender:"",role:""};
     const reset=()=>{
-      user={name:"",age:"",address:"",mobileNo:"",emailId:"",password:"",gender:""};
+      user={name:"",age:"",address:"",mobileNo:"",emailId:"",password:"",gender:"",role:""};
     }
 
     const ShowMessage=(msg)=>{
@@ -32,12 +36,28 @@ const Signup = () => {
  }
 
     const handleSubmit=()=>{
-          user={name:Name,age:Age,address:Address,mobileNo:MobileNo,emailId:Email,password:Password,gender:Gender};
+          user={name:Name,age:Age,address:Address,mobileNo:MobileNo,emailId:Email,password:Password,gender:Gender,role:Role};
           console.log(user);
           axios.post("http://127.0.0.1:8081/user/addNew",user).then((result)=>{
               console.log(result);
               reset();
-          })
+              if (result['status'] ==201) {
+              
+                toast.success('logged in succesfully');
+                console.log(result); 
+                const token = result['data']
+                sessionStorage['token'] = token
+                navigate("/");
+              }else{
+                toast.error('Something went wrong try again');
+              }
+              
+            }).catch((e)=>{
+              toast.error('Some error occured');
+    
+            })
+
+          
     }
   return (
     <>
@@ -50,7 +70,7 @@ const Signup = () => {
 
             </div>
             <div className="col-md-6 lead" style={rowStyle}>
-                <form  >
+                <div  >
                     <h1 style={{color: "rgb(189, 4, 4)"}} className="display-5">SIGNUP HERE</h1>
                     <div className="form-group my-3">
                       <label htmlFor="exampleInputEmail1" >Name</label>
@@ -96,8 +116,17 @@ const Signup = () => {
                       </select>
 
                     </div>
-                    <button type="submit" className="btn rounded-3 text-white" style={{backgroundColor:"#a30617"}} onClick={handleSubmit}>Sign up</button>
-                  </form>
+                    <div className="form-group my-3">
+                      <label htmlFor="exampleInputPassword1" >Role</label>
+                      <select className="form-control border-none" onClick={e=>setRole(e.target.value)}>
+                         <option value="select">Select Role</option>
+                          <option value="ROLE_ADMIN">Admin</option>
+                          <option value="ROLE_USER">User</option>
+                      </select>
+
+                    </div>
+                    <button  className="btn rounded-3 text-white" style={{backgroundColor:"#a30617"}} onClick={handleSubmit}>Sign up</button>
+                  </div>
             </div>
         </div>
 
