@@ -24,8 +24,9 @@ const Navbar = () => {
   },[selector])
     const logout=()=>{
             dispatch(deleteUser());
+            sessionStorage.removeItem("userData");
             navigate('/');
-            toast.success("Come back soon");
+            toast.info("Come back soon");
     }
   return (
     <>

@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import home1 from "../img/movie.jpg";
 import homeBack from "../img/background.png";
 import Carousel from "./Carousel";
 import Cards from "./Cards";
 import "./css/card.css"
+import { useSelector } from "react-redux";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Home = () => {
+    const user = useSelector((state) => state.user);
+    const option ={
+        headers : {
+         'Authorization': `Bearer ${user.items.token}`
+       }
+      }
+      useEffect(() => {
+        console.log(user.items.token);
+        axios.get("http://127.0.0.1:8081/user/email",option).then((result) => {
+          console.log(result);
+          sessionStorage.setItem("userData",result.data);
+          }).catch((error) => {
+            toast.error(error);
+          });
+      }, []);
+
+
     var rowStyle = {
         height: '100%!important',
         margin: "auto"

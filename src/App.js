@@ -12,6 +12,7 @@ import Admin_login from './Components/Admin_login';
 import Admin from './Components/Admin';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ShowList from './Components/ShowList';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/About" element={<About />}></Route>
         <Route path="/SingleMovie" element={<MovieDetail />}></Route>
+        <Route path="/show-list" element={<ShowList/>}></Route>
         <Route path="/Admin" element={<Admin />}></Route>
         <Route path="/AdminLogin" element={<Admin_login />}></Route>
         {/* <Route path="/About" element={<About />}></Route>

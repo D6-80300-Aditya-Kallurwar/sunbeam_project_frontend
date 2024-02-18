@@ -6,11 +6,12 @@ import axios from "axios";
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../features/userSlice";
+import { toast } from 'react-toastify'
 
 
 const MovieDetail = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
   var rowStyle = {
     color: "rgb(179, 16, 4)",
     margin: "auto"
@@ -25,32 +26,32 @@ const MovieDetail = () => {
   }
   const [movie, setMovie] = useState({});
   const [image, setImage] = useState("");
-  const option ={
-    headers : {
-     'Authorization': `Bearer ${user.items.token}`
-   }
+  // const option ={
+  //   headers : {
+  //    'Authorization': `Bearer ${user.items.token}`
+  //  }
+  // }
 
-  }
   // console.log(user.items);
   
   // Array of card data
   let location = useLocation();
   console.log(location.state.id.id);
+  const id=location.state.id.id;
   useEffect(() => {
-    console.log(user.items.token);
-    axios.get("http://127.0.0.1:8081/user/email",option).then((result) => {
-      console.log(result);
-      sessionStorage.setItem("userData",result.data);
-      }).catch((error) => {
-        console.log(error)
-      });
+    // console.log(user.items.token);
+    // axios.get("http://127.0.0.1:8081/user/email",option).then((result) => {
+    //   console.log(result);
+    //   sessionStorage.setItem("userData",result.data);
+    //   }).catch((error) => {
+    //     toast.error(error);
+    //   });
     axios.get("http://127.0.0.1:8081/movie/" + location.state.id.id).then((result) => {
-      // console.log(result.data);
+      console.log(result.data);
       setMovie(result.data);
       axios.get("http://127.0.0.1:8081/movie/images/" + location.state.id.id).then((result) => {
-        // console.log(result.data);
+      
         setImage(result.data);
-        // const imagebytes =  result.arraybuffer();
 
       }).catch((error) => {
         console.log(error)
@@ -63,24 +64,7 @@ const MovieDetail = () => {
     // <div></div>
     <>
 
-      {/* model start */}
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Theater Seats</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <SeatBooking />
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* model end  */}
+      
       <div class="container my-5 py-5 justify-content-center align-items-center">
         <div class="row ">
           <div class="col-md-6 mb-3" style={rowStyle}>
@@ -104,7 +88,7 @@ const MovieDetail = () => {
               <div>Release Date : {movie.releaseDate}</div>
             </div>
 
-            <button className="btn text-white btn-success p-3 " data-bs-toggle="modal" data-bs-target="#exampleModal">Book Ticket</button>
+            <NavLink className="btn text-white btn-success p-3 " to={"/show-list"} state={{ id: {id} }}>Book Ticket</NavLink>
 
           </div>
         </div>
