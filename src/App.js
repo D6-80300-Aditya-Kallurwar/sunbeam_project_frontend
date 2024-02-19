@@ -14,6 +14,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ShowList from './Components/ShowList';
 import ContactUs from './Components/ContactUs';
+import UserTickets from './Components/UserTickets';
+import SeatBooking from './Components/SeatBooking';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/Admin" element={<Admin />}></Route>
         <Route path="/AdminLogin" element={<Admin_login />}></Route>
         <Route path="/contact" element={<ContactUs />}></Route>
+        <Route path="/mytickets" element={<UserTickets />}></Route>
+        <Route path="/seatbooking" element={<SeatBooking />}></Route>
         {/* <Route path="/About" element={<About />}></Route>
         <Route path="/classes" element={<Curriculum />}></Route>
         <Route path="/Curriculum" element={<Curriculum />}></Route>

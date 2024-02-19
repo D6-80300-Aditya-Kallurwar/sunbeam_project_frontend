@@ -55,9 +55,15 @@ const Navbar = () => {
                         </>
                     )}
                     {token !== "" && (
+                        <>
+
                         <li className="nav-item me-4">
                         <button className="nav-link"style={{color:"#6c131c"}} onClick={logout}>Logout</button>
                     </li>
+                        <li className="nav-item me-4">
+                        <NavLink className="nav-link" style={{color:"#6c131c"}}to={"/mytickets"}>My Tickets</NavLink>
+                    </li>
+                        </>
                     )}
                     <li className="nav-item me-4">
                         <NavLink className="nav-link" style={{color:"#6c131c"}}to={"/about"}>About us</NavLink>

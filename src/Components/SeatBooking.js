@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../img/SignupImage.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addSeat, deleteSeat, findSeat, removeItem} from "../features/seatSlice";
 import axios from "axios";
@@ -46,19 +46,22 @@ const dosomething =(seat)=>{
     );
 };
 
-const SeatBooking = (prop) => {
+const SeatBooking = () => {
+    const location=useLocation();
+    // console.log(location.state.theater);
+    // console.log(location.state.showId);
     const dispatch = useDispatch();
-    // console.log(prop.seat.showId);
+    console.log(location.state.showId);
     var arr=useSelector((state)=>[state.seat.items]);
     const navigate = useNavigate();
-    console.log(prop);
+    console.log(location.state);
     const submitarray=()=>{
         // console.log(arr.length);
         if(arr[0].length!==0){
 
             console.log(sessionStorage.getItem("userData"));
             const data ={
-            showId: prop.showId,
+            showId: location.state.showId,
             userId: sessionStorage.getItem("userData")-0,
             requestSeats: arr[0]
           }
@@ -83,21 +86,23 @@ const SeatBooking = (prop) => {
     }
 
     const [seatsData,setSeatsData]=useState([{id:0,seatNo:"",seatType:"",price:0,isAvailable:true,isFoodContains:false}]);
-    console.log(prop);
+    console.log(location.state);
     useEffect(()=>{
     const data="";
     console.log(data);
-    if(prop.theater.length !== undefined){
-        setSeatsData(prop.theater);
+    if(location.state.theater.length !== undefined){
+        setSeatsData(location.state.theater);
     }
 console.log(seatsData);
-    },[prop])
+    },[location.state])
     return (
 
-        <div className="container ">
-            <div className="row text-center">
-                <div className="col-12">
-                <div> SCREEN</div>
+        <div className="container text-center">
+                    <p className="display-3">Select Seats</p>
+            <div className="row text-center my-4">
+            <div className="col-md-3 col-12"></div>
+                <div className="col-md-6 col-12 px-4 lead">
+                <div  > SCREEN</div>
                     <div className="screen d-flex flex-wrap justify-content-center " style={{ borderTop: "4px solid skyblue" }}>
                        
 
@@ -113,8 +118,10 @@ console.log(seatsData);
                           
                         })}
                     </div>
-                    <button className="btn btn-success" onClick={submitarray} data-bs-dismiss="modal">Book Ticket</button>
+                    <button className="btn btn-success my-2" onClick={submitarray} >Book Ticket</button>
                 </div>
+            <div className="col-md-3 col-12"></div>
+               
 
             </div>
         </div>
