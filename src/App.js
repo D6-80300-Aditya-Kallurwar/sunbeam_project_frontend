@@ -13,6 +13,7 @@ import Admin from './Components/Admin';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ShowList from './Components/ShowList';
+import ContactUs from './Components/ContactUs';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/show-list" element={<ShowList/>}></Route>
         <Route path="/Admin" element={<Admin />}></Route>
         <Route path="/AdminLogin" element={<Admin_login />}></Route>
+        <Route path="/contact" element={<ContactUs />}></Route>
         {/* <Route path="/About" element={<About />}></Route>
         <Route path="/classes" element={<Curriculum />}></Route>
         <Route path="/Curriculum" element={<Curriculum />}></Route>

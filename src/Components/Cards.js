@@ -17,7 +17,7 @@ import { NavLink } from "react-router-dom";
 
 const Card = ({ movieName, duration, rating, genre, language,id }) => {
     const [image, setImage] = useState("");
-    console.log(id);
+    // console.log(id);
     axios.get("http://127.0.0.1:8081/movie/images/" +id).then((result) => {
         setImage(result.data);
       }).catch((error) => {

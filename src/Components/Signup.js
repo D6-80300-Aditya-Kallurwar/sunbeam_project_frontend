@@ -61,10 +61,10 @@ const Signup = () => {
     }
   return (
     <>
-    <div className="container">
+    <div className="container mx-4">
         
 
-        <div class="row" style={{height: "108vh"}}>
+        <div class="row">
             <div class="col-md-6" style={rowStyle}>
                 <img src={logo} alt="" class="img-fluid"/>
 

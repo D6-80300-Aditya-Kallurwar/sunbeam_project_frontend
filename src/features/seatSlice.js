@@ -10,16 +10,23 @@ const initialState = {
     initialState,
     reducers: {
         addSeat: (state, item) => {
-        console.log("first");
         console.log(item.payload);
-        state.items.push(item.payload.seatNo);
+        state.items.push(item.payload);
+        console.log(state.items);
       },
 
 
-      deleteSeat: (state) => {
-        state.items = "";
+      deleteSeat: (state,item) => {
+        var array=[...state.items];
+        var ind=array.findIndex((seat)=>seat==item.payload);
+        array.splice(ind,1);
+        state.items=array;
+        // console.log(array);
+        // console.log(state.items);
       },
 
+      
+      
 
     //   updateSeat: (state, item) => {
     //     const { itemId, quantity } = item.payload
@@ -41,10 +48,10 @@ const initialState = {
     //     }
     //     state.items = items
     //   },
-      removeItem: (state) => {},
+      removeItem: (state) => {state=initialState},
     },
   })
   
-  export const { addSeat, deleteSeat,updateSeat } = seatSlice.actions
+  export const { addSeat, deleteSeat ,removeItem} = seatSlice.actions
   export default seatSlice.reducer
   

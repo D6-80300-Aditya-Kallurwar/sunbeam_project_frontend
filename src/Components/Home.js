@@ -18,8 +18,9 @@ const Home = () => {
       useEffect(() => {
         console.log(user.items.token);
         axios.get("http://127.0.0.1:8081/user/email",option).then((result) => {
-          console.log(result);
-          sessionStorage.setItem("userData",result.data);
+          console.log(result.data.id);
+          sessionStorage.setItem("userData",result.data.id);
+          console.log(window.sessionStorage.getItem("userData"));
           }).catch((error) => {
             toast.error(error);
           });

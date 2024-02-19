@@ -63,8 +63,6 @@ const MovieDetail = () => {
   return (
     // <div></div>
     <>
-
-      
       <div class="container my-5 py-5 justify-content-center align-items-center">
         <div class="row ">
           <div class="col-md-6 mb-3" style={rowStyle}>

@@ -9,17 +9,17 @@ import SeatBooking from './SeatBooking';
 const ShowListCard = (prop) => {
   const [theater,setTheater] =useState({});
     useEffect(()=>{
-      // console.log(prop);
-        axios.get("http://127.0.0.1:8081/theater/getTheater/"+prop.theaterId).then((result) => {
+      console.log(prop.showId);
+        axios.get("http://127.0.0.1:8081/show/getShowSeatList/"+prop.showId).then((result) => {
           setTheater(result.data);
           // console.log(result.data);
           
         }).catch((error) => {
           console.log(error)
         });
-      },[])
+      },[prop])
       const handleAccept=()=>{
-        toast.success("Tickit booked succesfully ");
+        // toast.success("Tickit booked succesfully ");
       }
       
       return (
@@ -34,7 +34,7 @@ const ShowListCard = (prop) => {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <SeatBooking theater={JSON.stringify(theater)}/> 
+              <SeatBooking theater={theater} showId={prop.showId}/> 
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
