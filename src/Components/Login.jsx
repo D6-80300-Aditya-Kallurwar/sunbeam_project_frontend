@@ -1,12 +1,42 @@
 import React from "react";
 import logo from "../img/LoginImage.png";
 import { NavLink } from "react-router-dom";
+import { useState,useEffect } from "react";
+import axios from "axios";
+
 
 const Login = () => {
     var rowStyle ={
-        color: "#a30617",
+        color: "rgb(255, 0, 0)",
         margin : "auto"
     };
+    var loginInfo={emailId:"",password:""};
+    const [Email,setEmail]=useState("");
+    const [Password,setPassword]=useState("");
+    const [message, setMessage] = useState("");
+    const reset=()=>{
+      loginInfo={emailId:"",password:""};
+    }
+
+    const ShowMessage=(msg)=>{
+      setMessage(msg);
+      setTimeout(() => {
+              setMessage("");
+      }, 2000);
+ }
+ 
+    const handleSubmit=()=>{
+      loginInfo={emailId:Email,password:Password};
+      console.log(loginInfo);
+      axios.post("http://127.0.0.1:8080/user/addNew",loginInfo).then((result)=>{
+        if(result.data.affectedRows!==undefined&&result.data.affectedRows>0){
+          ShowMessage("Login successfully!!!");
+          reset();
+        }else{
+          ShowMessage("Something went wrong!!!");
+        }
+      })
+    }
   return (
     <>
     <div class="container">
@@ -15,18 +45,20 @@ const Login = () => {
             <div class="col-md-6" style={rowStyle}>
                 <img src={logo} alt="" class="img-fluid"/>
             </div>
-            <div class="col-md-6" style={rowStyle}>
+            <div class="col-md-6 lead" style={rowStyle}>
                 <form  >
-                    <h1 style={{color: "#831422"}}>LOGIN HERE</h1>
+                    <h1 style={{color: "rgb(189, 4, 4)"}} className="display-5">LOGIN HERE</h1>
                     <div class="form-group my-3">
-                      <label for="exampleInputEmail1" class="fw-bold">Email address</label>
-                      <input type="email" class="form-control border-danger text-danger" id="exampleInputEmail1"  placeholder="Enter Email" style={{background: "none;"}}/>
+                      <label for="exampleInputEmail1" >Email address</label>
+
+                      <input type="email" class="form-control border-none " id="exampleInputEmail1" value={Email} onChange={e=>setEmail(e.target.value)}  placeholder="Enter Email" style={{background: "none;"}}/>
                     </div>
                     <div class="form-group my-3">
-                      <label for="exampleInputPassword1" class="fw-bold">Password</label>
-                      <input type="password" class="form-control border-danger text-danger" id="exampleInputPassword1" placeholder="Enter Password" style={{background: "none;"}}/>
+                      <label for="exampleInputPassword1" >Password</label>
+                      <input type="password" class="form-control border-none " id="exampleInputPassword1" value={Password} onChange={e=>setPassword(e.target.value)} placeholder="Enter Password" style={{background: "none;"}}/>
+
                     </div>
-                    <button type="submit" class="btn rounded-3 text-white" style={{backgroundColor:"#a30617"}}>Submit</button>
+                    <button type="submit" class="btn btn-danger rounded-3 " onClick={handleSubmit}>Submit</button>
                   </form>
             </div>
         </div>
