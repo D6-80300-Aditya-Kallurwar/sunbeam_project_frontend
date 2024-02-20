@@ -48,7 +48,7 @@ const initialState = {
     //     }
     //     state.items = items
     //   },
-      removeItem: (state) => {state=initialState},
+      removeItem: (state) => {state=state.items.splice(0,state.items.length)},
     },
   })
   

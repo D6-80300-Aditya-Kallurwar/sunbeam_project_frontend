@@ -43,11 +43,11 @@ const Signup = () => {
               reset();
               if (result['status'] ==201) {
               
-                toast.success('logged in succesfully');
+                toast.success('Signup succesfull');
                 console.log(result); 
                 const token = result['data']
                 sessionStorage['token'] = token
-                navigate("/");
+                navigate("/login");
               }else{
                 toast.error('Something went wrong try again');
               }

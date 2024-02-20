@@ -4,18 +4,21 @@ import homeBack from "../img/background.png";
 import Carousel from "./Carousel";
 import Cards from "./Cards";
 import "./css/card.css"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { removeItem } from "../features/seatSlice";
 
 const Home = () => {
     const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
     const option ={
         headers : {
          'Authorization': `Bearer ${user.items.token}`
        }
       }
       useEffect(() => {
+        dispatch(()=>removeItem());
         console.log(user.items.token);
         axios.get("http://127.0.0.1:8081/user/email",option).then((result) => {
           console.log(result.data.id);

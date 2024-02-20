@@ -33,14 +33,6 @@ function App() {
         <Route path="/contact" element={<ContactUs />}></Route>
         <Route path="/mytickets" element={<UserTickets />}></Route>
         <Route path="/seatbooking" element={<SeatBooking />}></Route>
-        {/* <Route path="/About" element={<About />}></Route>
-        <Route path="/classes" element={<Curriculum />}></Route>
-        <Route path="/Curriculum" element={<Curriculum />}></Route>
-        <Route path="/Career" element={<Career />}></Route>
-        <Route path="/Contact" element={<Contact />}></Route>
-        <Route path="/Career/Contact" element={<Contact />}></Route>
-        <Route path="/event" element={<Events />}></Route>
-        <Route path="/Singleevent/:id" element={<Singleevents />}></Route> */}
       </Routes>
       <ToastContainer />
       <Footer/>

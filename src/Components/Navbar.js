@@ -5,6 +5,7 @@ import "./css/nav.css";
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteUser } from "../features/userSlice";
 import { toast } from "react-toastify";
+import { removeItem } from "../features/seatSlice";
 
 const Navbar = () => {
     const [token,setToken]=useState("");
@@ -18,6 +19,7 @@ const Navbar = () => {
       console.log(selector);
       setToken(selector);
       
+      
     },[])
     useEffect(()=>{
       setToken(selector.items);
@@ -27,7 +29,8 @@ const Navbar = () => {
             sessionStorage.removeItem("userData");
             navigate('/');
             toast.info("Come back soon");
-    }
+            dispatch(removeItem());
+    }       
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-light text-secondary sticky-top  shadow fixed" style={{backgroundColor:"rgba(255, 255, 255, 0.9)" }}>
