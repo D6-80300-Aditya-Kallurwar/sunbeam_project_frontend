@@ -9,7 +9,7 @@ const initialState = {
     name: 'seat',
     initialState,
     reducers: {
-        addSeat: (state, item) => {
+        addSeat: (state, item) =>    {
         console.log(item.payload);
         state.items.push(item.payload);
         console.log(state.items);
