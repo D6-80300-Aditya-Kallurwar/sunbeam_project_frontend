@@ -1,0 +1,18 @@
+.card:hover {
+    transform: translateZ(40px);
+    scale: 1.05;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(170, 170, 170, 0.7); 
+    transition: 0.5s;
+    /* transition-timing-function: ease-in-out; */
+}
+#crd-text{
+    background-color: transparent ;
+}
+.card{
+    border:none ;
+    z-index:1 ;
+    min-width: 10rem; 
+    height: 20rem ;
+    background: rgba(255,255,255, 0.04);
+}
