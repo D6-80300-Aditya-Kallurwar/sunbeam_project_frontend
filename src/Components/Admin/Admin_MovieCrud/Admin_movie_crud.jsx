@@ -79,6 +79,7 @@ export default function MovieCrud() {
             console.log(image);
             const data=new FormData();
             data.append("imageFile" , image);
+            console.log(data);
             axios.post(imageurl+result.data,data).then((result)=>{
                 toast.success("movie saved succesfully");
                 GetRecords();
